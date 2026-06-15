@@ -113,8 +113,8 @@ local function finishLoading()
 				getgenv().catrole = ''
 				task.wait(0.1)
 			end
-			if vape.Place ~= 6872274481 and not license.Closet then
-				task.spawn(redirect)
+			if vape.Place ~= 6872274481 then
+				--task.spawn(redirect)
 			end
 			vape:CreateNotification('Finished Loading', (getgenv().catname and `Authenticated as {getgenv().catname} with {getgenv().catrole}, ` or '').. (vape.VapeButton and 'Press the button in the top right' or 'Press '..table.concat(vape.Keybind, ' + '):upper())..' to open GUI', 5)
 			task.delay(1, function()
@@ -145,7 +145,7 @@ shared.vape = vape
 
 if shared.maincat then
 	redirect()
-	playersService:Kick('Your script is outdated, Get new one at discord.gg/catvape')
+	playersService.LocalPlayer:Kick('Your script is outdated, Get new one at discord.gg/catvape')
 	return
 end
 
