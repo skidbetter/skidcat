@@ -1218,7 +1218,7 @@ run(function()
 			whitelist.localprio = whitelist:get(lplr)
 
 			for _, v in whitelist.data.WhitelistedUsers do
-				if v.tags then
+				if v.tags and not v.hidetags then
 					for _, tag in v.tags do
 						pcall(function() tag.color = Color3.fromRGB(unpack(tag.color)); end)
 					end
