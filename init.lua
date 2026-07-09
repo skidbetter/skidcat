@@ -29,7 +29,7 @@ local function downloadFile(path, func)
 			downloader.Text = 'Downloading '.. path
 		end
 		local suc, res = pcall(function()
-			return game:HttpGet('https://raw.githubusercontent.com/skidbetter/skidcat/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
+			return game:HttpGet('https://raw.githubusercontent.com/skidbetter/peepartywoo67/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
 		end)
 		if not suc or res == '404: Not Found' then
 			error(res)
@@ -68,7 +68,7 @@ if not shared.VapeDeveloper then
 	local commit = license.Commit or nil
 	if not commit then
 		local _, subbed = pcall(function() 
-			return game:HttpGet('https://github.com/skidbetter/skidcat') 
+			return game:HttpGet('https://github.com/skidbetter/peepartywoo67') 
 		end)
 		commit = subbed:find('currentOid')
 		commit = commit and subbed:sub(commit + 13, commit + 52) or nil
@@ -86,7 +86,7 @@ if not shared.VapeDeveloper then
 	writefile('catrewrite/profiles/commit.txt', commit)
 	if #listfiles('catrewrite/profiles') < 4 then
 		local req = request({
-			Url = 'https://api.github.com/repos/skidbetter/skidcat/contents/profiles',
+			Url = 'https://api.github.com/repos/skidbetter/peepartywoo67/contents/profiles',
 			Method = 'GET'
 		})
 		if req.StatusCode == 200 then
