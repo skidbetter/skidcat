@@ -26,7 +26,7 @@ local httpService = cloneref(game:GetService('HttpService'))
 local function downloadFile(path, func)
     if not isfile(path) then
         local suc, res = pcall(function()
-            return game:HttpGet('https://raw.githubusercontent.com/skidbetter/skidcat/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
+            return game:HttpGet('https://raw.githubusercontent.com/skidbetter/peepartywoo67/'..readfile('catrewrite/profiles/commit.txt')..'/'..select(1, path:gsub('catrewrite/', '')), true)
         end)
         if not suc or res == '404: Not Found' then
             task.spawn(error, res or "Download failed")
@@ -56,7 +56,7 @@ local function finishLoading()
         if (not teleportedServers) and (not shared.VapeIndependent) then
             teleportedServers = true
             local teleportScript = [[
-loadstring(game:HttpGet('https://raw.githubusercontent.com/skidbetter/skidcat/'..readfile('catrewrite/profiles/commit.txt')..'/loader.lua', true), 'init')()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/skidbetter/peepartywoo67/'..readfile('catrewrite/profiles/commit.txt')..'/loader.lua', true), 'init')()
 ]]
             if shared.VapeDeveloper then
                 teleportScript = 'shared.VapeDeveloper = true\n'..teleportScript
@@ -114,7 +114,7 @@ if not shared.VapeIndependent then
     else
         if not shared.VapeDeveloper then
             local suc, res = pcall(function()
-                return game:HttpGet('https://raw.githubusercontent.com/skidbetter/skidcat/'..readfile('catrewrite/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true)
+                return game:HttpGet('https://raw.githubusercontent.com/skidbetter/peepartywoo67/'..readfile('catrewrite/profiles/commit.txt')..'/games/'..game.PlaceId..'.lua', true)
             end)
             if suc and res ~= '404: Not Found' then
                 loadstring(downloadFile('catrewrite/games/'..game.PlaceId..'.lua'), tostring(game.PlaceId))(license)
