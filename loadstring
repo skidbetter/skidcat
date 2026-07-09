@@ -1,1 +1,1 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/skidbetter/skidcat/main/init.lua'), 'init.lua')({})
+loadstring(game:HttpGet('https://raw.githubusercontent.com/skidbetter/peepartywoo67/main/init.lua'), 'init.lua')({})
